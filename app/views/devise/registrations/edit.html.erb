@@ -2,7 +2,7 @@
 
 
 
-<div class="col-md-6 ">
+<div class="col-md-6 col-md-offset-4 " style="margin-top: 30px">
       <div class="row">
         <section>
           <%= render 'shared/avatar' %>
@@ -11,7 +11,7 @@
                 <%= render 'shared/error_messages', object: f.object %>
             <%= f.label :imagen %>
             <%= f.file_field :photo %>
-              <div class="col-md-7">  <%= f.submit "Update your photo", class: "btn  btn-large btn-success" %>     </div>
+              <div class="col-md-7">  <%= f.submit "Actualiza photo", class: "btn  btn-large btn-success" %>     </div>
         <% end %>
         <br>
         <br>

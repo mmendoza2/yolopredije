@@ -1,31 +1,39 @@
-<header id="header" class="site-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="text-center" style="margin-top: 100px">
-          <br>
-          <h2 style="color: #ffffff; font-weight: 100; font-size: 40px" >Welcome to QuickPlace</h2>
-          <br>
-          <% [:notice, :error, :alert].each do |level| %>
-              <% unless flash[level].blank? %>
-                  <div data-alert="alert" class="alert-message <%= flash_class(level) %> fade in">
-                    <a class="close" href="#">×</a>
-                    <%= content_tag :p, flash[level] %>
-                  </div>
-              <% end %>
-          <% end %>
-        </div>
-        <section>
-          <div class="text-center  ">
-            <i class="icon-facebook-sign"></i>  <%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: " btn btn-lg btn-primary" %>
+<% if signed_in?	  %>
+    <div class="container">
+
+
+    </div>
+
+<%	 else %>
+
+
+
+
+
+    <div id="bg" style="margin-top: -100px;  ">
+      <%= image_tag ""%>
+    </div>
+
+
+    <div class="container " style="z-index: -1" >
+
+      <div class="col-md-12" style="margin-top: 15%; text-align: center; " >
+        <div>    <h1>YoLoPredije</h1></div>
+        <br/>
+        <br/>
+
+        <div  style="text-align: center; color: #ffffff  ">
+
+          <div class="col-md-10 col-md-offset-1" style="background-color:rgba(73, 73, 73, 0.80); padding-top: 15px; padding-bottom: 15px; padding-left: 5px; margin-bottom: 50px; border-radius: 10px; ">
+            <h4> ¡Ingresa, adivina y gana DINERO! </h4>
+            <br/>
+            <h4>   ¡y otros premios!</h4>
           </div>
 
-        </section>
-      </div><!-- /span12 -->
-    </div><!-- /row-fluid -->
-  </div><!-- /container -->
+          <i class="icon-facebook-sign" ></i>  <%= link_to "Ingresa con Facebook", user_omniauth_authorize_path(:facebook), class: " btn btn-lg btn-primary" %>
+        </div>
+      </div>
+    </div>
 
 
-</header>
-
-
+<%	 end %>

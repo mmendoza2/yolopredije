@@ -232,12 +232,12 @@ Devise.setup do |config|
 
   if Rails.env.development?
      config.omniauth :facebook, '1642126596032336', 'f58e7ba2fbb2c6d4ad1eca6260e70851',
-                  scope: "email, user_friends, user_location ",
+                  scope: "email",
                   :secure_image_url => 'true',
                   :image_size => 'large'
   else
     config.omniauth :facebook, '1642126379365691', 'd70f262d707b5c8d86d5fe4650057629',
-                scope: "email, user_friends, user_location ",
+                scope: "email",
                 :secure_image_url => 'true',
                 :image_size => 'large'
   end

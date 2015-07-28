@@ -10,10 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
-    @eventos = @user.eventos.paginate(page: params[:page])
-    @micrositios = @user.micrositios.paginate(page: params[:page])
-    @micrositio = Micrositio.all
+
   end
 
   def new
@@ -78,7 +75,7 @@ class UsersController < ApplicationController
 
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :photo, :lat, :lng, :admin)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :photo)
     end
 
     # Before filters
